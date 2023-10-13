@@ -122,6 +122,9 @@ body {
   color: hsl(178, 100%, 50%);
 }
 
+.footer {
+  padding: 1.5rem;
+}
 .footer .attribution {
   font-size: 0.9rem;
   text-align: center;
