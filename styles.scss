@@ -1,0 +1,171 @@
+/* VARIABLES */
+$text: 'Outfit', sans-serif;
+$font-size: 1.15rem;
+/* Primary Color */
+$soft-blue: hsl(215, 51%, 70%);
+$cyan: hsl(178, 100%, 50%);
+/*Neutral*/
+$very-dark-blue-main: hsl(217, 54%, 11%); /* main BG */
+$very-dark-blue-card: hsl(216, 50%, 16%); /* card BG */
+$very-dark-blue: hsl(215, 32%, 27%); /* line */
+$white: hsl(0, 0%, 100%);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $very-dark-blue-main;
+    font-family: $text;
+    color: $white;
+    font-size: $font-size;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 95vh; 
+
+    .card {
+        background-color: rgba(0,0,0,0.1);
+        padding: 1.5rem 1rem 3rem;
+        border-radius: 1.5rem;
+    }
+    
+    .container {
+        width: 25rem;
+        background-color: $very-dark-blue-card;
+        padding: 1.5rem;
+        border-radius: 1.5rem;   
+
+        .img-container {
+            position: relative;
+            width: 100%;
+            cursor: pointer;
+            
+            .main-img {
+                display: block;
+                width: 100%;
+                border-radius: 1rem;
+            }
+
+            .overlay {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 100%;
+                width: 100%;
+                opacity: 0;
+                background-color: $cyan;
+                border-radius: 1rem;
+                transition: all 0.3s;
+
+                .icon-view {
+                    position: absolute;
+                    top: 35%;
+                    left: 35%;
+                    transform: translate(50%, 50%);                    
+                    
+                } 
+            }
+
+        }
+
+        .img-container:hover .overlay {
+            opacity: 0.5;
+        }
+
+
+
+        .title {
+            font-size: 1.4rem;
+            margin-top: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .title:hover {
+            color: $cyan;
+        }
+
+        .description {
+            margin-top: 1rem;
+            font-weight: 200;
+            color: $soft-blue;
+        }
+
+        .price {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid $very-dark-blue;
+            padding-bottom: 1.5rem;
+
+            .icon {
+                margin-right: 0.5rem;
+            }
+
+            .ethereum {
+                color: $cyan;
+            }
+
+            .time {
+                color: $soft-blue;
+            }
+        }
+
+        .avatar {
+            display: flex;
+            margin-top: 1.5rem;            
+            align-items: center;
+
+            .avatar-img {
+                width: 3rem;
+                border: 1px solid $white;
+                border-radius: 50%;
+                margin-right: 1rem;
+            }
+
+            p {
+                color: $soft-blue;
+
+                a {
+                    color: $white;
+                    text-decoration: none;
+                    cursor: pointer;
+                    transition: all 0.3s;
+                }
+
+                a:hover {
+                    color: $cyan;
+                }
+            }
+        }
+    }     
+    
+}
+
+
+.footer {
+    .attribution { font-size: 0.9rem; text-align: center; }
+    .attribution a { color: $white; }
+}
+
+/* Mobile Screen */
+@media screen and (max-width : 450px) {
+    .main {
+        margin: 1rem;
+    }
+    
+    .container {
+        width: 100%!important;   
+         
+    }
+}
